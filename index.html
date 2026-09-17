@@ -59,9 +59,9 @@
             padding: 15px;
             text-align: center;
             position: sticky;
-            top: 164px;
-            box-shadow: 0 2px 8px #0002;
+            top: var(--header-height, 164px);
             z-index: 9999;
+            box-shadow: 0 2px 8px #0002;
         }
 
             nav a {
@@ -219,7 +219,7 @@
             margin-top: 5px;
         }
 
-       /* .visitor-counter {
+        /* .visitor-counter {
             margin: 20px auto 5px;
             display: inline-block;
             background: #06356f;
@@ -272,13 +272,14 @@
 
 
         /* ===== Bilingual Header with Logos ===== */
+
         .site-header {
             background: #06356f;
             color: #fff;
             padding: 14px 25px;
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 10000;
         }
 
         .header-inner {
@@ -1204,14 +1205,14 @@
 
                 galleryGrid.insertAdjacentHTML("afterbegin",
                     `<div class="gallery-slide${index === 0 ? " active" : ""}" data-slide="${index}">
-                                                                                                                <img src="${escapeHtml(imagePath)}" alt="${escapeHtml(title)}"
-                                                                                                                     onclick="openLightbox('${escapeJs(imagePath)}','${escapeJs(title)}')">
-                                                                                                                <div class="gallery-caption">${escapeHtml(title)}</div>
-                                                                                                            </div>`);
+                                                                                                                        <img src="${escapeHtml(imagePath)}" alt="${escapeHtml(title)}"
+                                                                                                                             onclick="openLightbox('${escapeJs(imagePath)}','${escapeJs(title)}')">
+                                                                                                                        <div class="gallery-caption">${escapeHtml(title)}</div>
+                                                                                                                    </div>`);
 
                 galleryDots.insertAdjacentHTML("beforeend",
                     `<button class="gallery-dot${index === 0 ? " active" : ""}" type="button"
-                                                                                                                onclick="showSlide(${index})" aria-label="Go to image ${index + 1}"></button>`);
+                                                                                                                        onclick="showSlide(${index})" aria-label="Go to image ${index + 1}"></button>`);
             });
 
             updateSlideUI();
@@ -1264,12 +1265,12 @@
                 const path = "Documents/" + item.file;
                 documentsList.insertAdjacentHTML("beforeend",
                     `<div class="document-item">
-                                                                                                                <div class="document-name">📄 ${escapeHtml(item.title || item.file)}</div>
-                                                                                                                <div class="document-actions">
-                                                                                                                    <a class="doc-btn" href="${escapeHtml(path)}" target="_blank" rel="noopener">View</a>
-                                                                                                                    <a class="doc-btn download" href="${escapeHtml(path)}" download>Download</a>
-                                                                                                                </div>
-                                                                                                            </div>`);
+                                                                                                                        <div class="document-name">📄 ${escapeHtml(item.title || item.file)}</div>
+                                                                                                                        <div class="document-actions">
+                                                                                                                            <a class="doc-btn" href="${escapeHtml(path)}" target="_blank" rel="noopener">View</a>
+                                                                                                                            <a class="doc-btn download" href="${escapeHtml(path)}" download>Download</a>
+                                                                                                                        </div>
+                                                                                                                    </div>`);
             });
         }
 
@@ -1326,6 +1327,30 @@
                 document.getElementById("lightboxImage").src = "";
             }
         });
+
+        // ===== Sticky Header + Navigation =====
+
+        function updateHeaderHeight() {
+            const header = document.querySelector(".site-header");
+
+            if (header) {
+                document.documentElement.style.setProperty(
+                    "--header-height",
+                    header.offsetHeight + "px"
+                );
+            }
+        }
+
+        window.addEventListener("load", updateHeaderHeight);
+        window.addEventListener("resize", updateHeaderHeight);
+
+        const header = document.querySelector(".site-header");
+
+        if (header) {
+            const resizeObserver = new ResizeObserver(updateHeaderHeight);
+            resizeObserver.observe(header);
+        }
+
     </script>
 
     <div align="center">
