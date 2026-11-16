@@ -1299,6 +1299,105 @@
     </script>
 
 
+    <style>
+        /* =========================================================
+               Events Gallary fo all activity
+            ========================================================= */
+
+        .eventgallery-container {
+            max-width: 1550px;
+            margin: auto;
+        }
+
+        .eventgallery-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+            .eventgallery-heading h2 {
+                color: #1f3a5f;
+                font-size: 27px;
+                margin-bottom: 8px;
+            }
+
+            .eventgallery-heading p {
+                color: #888;
+                font-size: 14px;
+            }
+
+        .eventgallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .eventgallery-item {
+            height: 240px;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+            .eventgallery-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.4s ease;
+            }
+
+            .eventgallery-item:hover img {
+                transform: scale(1.06);
+            }
+
+        /* Image Preview */
+
+        .eventgallery-preview {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+            .eventgallery-preview img {
+                max-width: 90%;
+                max-height: 85vh;
+                border-radius: 5px;
+            }
+
+        .eventgallery-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+        }
+
+        /* Tablet */
+
+        @media (max-width: 768px) {
+            .eventgallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile */
+
+        @media (max-width: 480px) {
+            .eventgallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .eventgallery-item {
+                height: 230px;
+            }
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -1417,6 +1516,11 @@
                     <span>Contact Us</span>
                 </a>
 
+                <a href="#" class="sidebar-link"
+                   onclick="showSection('eventsgallery', this); return false;">
+                    <span class="menu-icon">★</span>
+                    <span>Events Gallery</span>
+                </a>
             </div>
 
         </aside>
@@ -1631,11 +1735,11 @@
                     <div class="leader">
 
                         <div class="avatar">
-                            <img src="Images/VijayNaik.jpeg" alt="Vijayakumar H Naik">
+                            <!--<img src="Images/VijayNaik.jpeg" alt="Vijayakumar H Naik">-->
 
                         </div>
 
-                        <h3>Vijayakumar H Naik</h3>
+                        <!--<h3>Vijayakumar H Naik</h3>-->
 
                         <p>Secretary</p>
 
@@ -1807,11 +1911,12 @@
                     <div class="leader">
 
                         <div class="avatar">
-                            <img src="Images/VijayNaik.jpeg" alt="Vijayakumar H Naik">
+
+                            <!--<img src="Images/VijayNaik.jpeg" alt="Vijayakumar H Naik">-->
 
                         </div>
 
-                        <h3> Vijayakumar H Naik </h3>
+                        <!--<h3> Vijayakumar H Naik </h3>-->
 
                         <p> Secretary </p>
 
@@ -2244,6 +2349,110 @@
                 </div>
             </section>
 
+            <!-- =====================================================
+                Events GALLERY added on 08-11-2026
+            ====================================================== -->
+
+            <section id="eventsgallery" class="page-section">
+
+                <div class="section-title">
+                    <h2>18-10-2026 – Blood Donation Camp</h2>
+                    <div class="title-line"></div>
+
+                </div>
+
+                <div class="eventgallery-grid">
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/B1.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/B2.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/B3.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/B4.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/B5.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/B6.jpg" onclick="showImage(this)">
+                        <!--<img src="EventsHealth/C6.jpeg" alt="Event Photo" onclick="showImage(this)" />-->
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/B7.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/B8.jpg" onclick="showImage(this)">
+                    </div>
+
+                </div>
+                <br /> <br />
+                <div class="section-title">
+                    <h2>03-11-2026 – General Health Check-up and IVF Consultation</h2>
+                    <div class="title-line"></div>
+
+                </div>
+                <div class="eventgallery-grid">
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D1.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D2.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D3.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D4.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D5.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D6.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D7.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D8.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D9.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D10.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D11.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D12.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D13.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D14.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D15.jpg" onclick="showImage(this)">
+                    </div>
+                    <div class="eventgallery-item">
+                        <img src="EventsHealth/D16.jpg" onclick="showImage(this)">
+                    </div>
+
+
+                </div>
+                <br /><br />
+
+
+            </section>
+
+
         </main>
 
     </div>
@@ -2263,10 +2472,6 @@
 
     </footer>
 
-
-
-
-
     <!-- =========================================================
          BACKGROUND MUSIC
     ========================================================== -->
@@ -2282,7 +2487,6 @@
         </audio>
 
     </div>
-
 
     <!-- =========================================================
          SECTION NAVIGATION JAVASCRIPT
@@ -2986,6 +3190,108 @@
             }
 
         }
+
+    </script>
+
+    <!--<script>
+    function showImage(img) {
+        var preview = document.getElementById("eventgalleryPreview");
+        var previewImg = document.getElementById("eventgalleryPreviewImg");
+
+        previewImg.src = img.src;
+        preview.style.display = "flex";
+
+        document.body.style.overflow = "hidden";
+    }
+
+    function hideImage() {
+        document.getElementById("eventgalleryPreview").style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+
+
+    </script>-->
+
+
+    <div class="eventgallery-preview" id="eventgalleryPreview" onclick="hideImage()">
+        <span class="eventgallery-close" onclick="hideImage()">&times;</span>
+        <button class="eventgallery-prev" onclick="changeEventImage(-1, event)">
+            &#10094;
+        </button>
+        <img id="eventgalleryPreviewImg" alt="Gallery Preview" onclick="event.stopPropagation();" />
+        <button class="eventgallery-next" onclick="changeEventImage(1, event)">
+            &#10095;
+        </button>
+    </div>
+
+    <script>
+
+        var eventGalleryImages = [];
+        var currentEventImage = 0;
+
+        // Get all gallery images
+        function getEventGalleryImages() {
+            eventGalleryImages = Array.from(
+                document.querySelectorAll(".eventgallery-item img")
+            );
+        }
+
+        // Open image preview
+        function showImage(img) {
+
+            getEventGalleryImages();
+            currentEventImage = eventGalleryImages.indexOf(img);
+            document.getElementById("eventgalleryPreviewImg").src = img.src;
+            document.getElementById("eventgalleryPreview").style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
+
+        // Next / Previous image
+        function changeEventImage(direction, e) {
+
+            e.stopPropagation();
+            currentEventImage += direction;
+
+            if (currentEventImage >= eventGalleryImages.length) {
+                currentEventImage = 0;
+            }
+
+            if (currentEventImage < 0) {
+                currentEventImage = eventGalleryImages.length - 1;
+            }
+
+            document.getElementById("eventgalleryPreviewImg").src =
+                eventGalleryImages[currentEventImage].src;
+        }
+
+        // Close preview
+        function hideImage() {
+
+            document.getElementById("eventgalleryPreview").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        // Keyboard navigation
+        document.addEventListener("keydown", function (e) {
+
+            var preview = document.getElementById("eventgalleryPreview");
+
+            if (preview.style.display === "flex") {
+
+                if (e.key === "ArrowRight") {
+                    changeEventImage(1, e);
+                }
+
+                if (e.key === "ArrowLeft") {
+                    changeEventImage(-1, e);
+                }
+
+                if (e.key === "Escape") {
+                    hideImage();
+                }
+            }
+
+        });
 
     </script>
 
